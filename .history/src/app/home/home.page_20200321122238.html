@@ -1,0 +1,33 @@
+<ion-content class="fondo">
+    <ng-container *ngIf="!error; else errorTemplate">
+        <!-- Contenido -->
+        <ng-container *ngIf="perfil; else loadTemplate">
+            <div [ngSwitch]="perfil.plantilla">
+                <div *ngSwitchCase="'primera'">
+                    <app-primera [perfil]="perfil"></app-primera>
+                </div>
+                <div *ngSwitchCase="'segunda'">
+                    <app-segunda></app-segunda>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Cargando template -->
+        <ng-template #loadTemplate>
+            <ion-label>Cargando</ion-label>
+        </ng-template>
+    </ng-container>
+
+    <!-- Error template -->
+    <ng-template #errorTemplate>
+        <ion-label>{{error}}</ion-label>
+    </ng-template>
+</ion-content>
+
+<!-- Añadir a contactos -->
+
+<ion-footer *ngIf="!error && perfil">
+    <ion-toolbar class="fondo">
+        <ion-label>Añadir a contactos</ion-label>
+    </ion-toolbar>
+</ion-footer>

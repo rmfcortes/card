@@ -1,0 +1,8 @@
+<ion-content class="fondo">
+    <ion-item lines="none" style="text-align: center;">
+        <ion-label class="text-wrap">{{perfil.ubicacion.direccion}}</ion-label>
+    </ion-item>
+    <agm-map style="height: 50%" [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [streetViewControl]="false">
+        <agm-marker [iconUrl]='{"url": icon,"scaledSize": {"height": 75, "width": 50}}' [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [animation]="'DROP'"></agm-marker>
+    </agm-map>
+</ion-content>

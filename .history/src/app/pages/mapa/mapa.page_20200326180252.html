@@ -1,0 +1,28 @@
+<ion-content class="fondo">
+    <ng-container *ngIf="perfil; else elseTemplate">
+        <!-- Botón Navegar -->
+        <ion-item lines="none" (click)="goMaps()">
+            <ion-icon slot="end" size="large" name="navigate-circle" style="--color: var(--botonesFillColor)"></ion-icon>
+        </ion-item>
+        <!-- Título y dirección -->
+        <ion-item lines="none" style="text-align: center">
+            <ion-label class="ion-text-wrap">
+                <h1 class="colorContacto">Encuéntranos</h1>
+            </ion-label>
+        </ion-item>
+        <app-separador-estrella></app-separador-estrella>
+        <ion-item lines="none" style="text-align: center;">
+            <ion-label class="ion-text-wrap">
+                <h2 class="direccion">{{perfil.ubicacion.direccion}}</h2>
+            </ion-label>
+        </ion-item>
+        <!-- Mapa -->
+        <agm-map style="height: 50vh" [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [streetViewControl]="false" [zoom]=16>
+            <agm-marker [iconUrl]='{"url": icon,"scaledSize": {"height": 75, "width": 50}}' [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [animation]="'DROP'"></agm-marker>
+        </agm-map>
+    </ng-container>
+    <ng-template #elseTemplate>
+        cargando
+    </ng-template>
+
+</ion-content>

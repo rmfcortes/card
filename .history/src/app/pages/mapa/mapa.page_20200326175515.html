@@ -1,0 +1,22 @@
+<ion-content class="fondo">
+    <!-- Botón Navegar -->
+    <ion-item lines="none" (click)="goMaps()">
+        <ion-icon slot="end" size="large" name="navigate-circle" class="boton-navigate"></ion-icon>
+    </ion-item>
+    <!-- Título y dirección -->
+    <ion-item lines="none" style="text-align: center">
+        <ion-label class="ion-text-wrap">
+            <h1 class="colorContacto">Encuéntranos</h1>
+        </ion-label>
+    </ion-item>
+    <app-separador-estrella></app-separador-estrella>
+    <ion-item lines="none" style="text-align: center;">
+        <ion-label class="ion-text-wrap direccion">
+            {{perfil.ubicacion.direccion}}
+        </ion-label>
+    </ion-item>
+    <!-- Mapa -->
+    <agm-map *ngIf="perfil" style="height: 50vh" [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [streetViewControl]="false" [zoom]=16>
+        <agm-marker [iconUrl]='{"url": icon,"scaledSize": {"height": 75, "width": 50}}' [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [animation]="'DROP'"></agm-marker>
+    </agm-map>
+</ion-content>

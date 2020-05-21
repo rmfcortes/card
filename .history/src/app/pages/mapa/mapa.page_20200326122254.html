@@ -1,0 +1,12 @@
+<ion-content class="fondo">
+    <div [style.visibility]="perfil ? 'visible' : 'hidden'">
+        <ion-item lines="none" style="text-align: center;">
+            <ion-label class="text-wrap">
+                <h2 class="direccion">{{perfil.ubicacion.direccion}}</h2>
+            </ion-label>
+        </ion-item>
+        <agm-map *ngIf="perfil" style="height: 50vh" [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [streetViewControl]="false">
+            <agm-marker [iconUrl]='{"url": icon,"scaledSize": {"height": 75, "width": 50}}' [latitude]="perfil.ubicacion.lat" [longitude]="perfil.ubicacion.lng" [animation]="'DROP'"></agm-marker>
+        </agm-map>
+    </div>
+</ion-content>

@@ -1,0 +1,26 @@
+.marco-portada {
+    width: 100vw;
+    border-radius: 0 0 500px 500px;
+    overflow: hidden;
+}
+
+.marco-foto {
+    height: 30vw;
+    width: 30vw;
+    margin-top: -15vw;
+    margin-left: 35vw;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.10);
+    background: white;
+    overflow: hidden;
+    z-index: 20;
+}
+
+// Background color, shade, and tint
+$background: #3880ff;
+$background-shade: mix(#000, $background, 12%);
+$background-tint: mix(#fff, $background, 10%);
+// Text color, darker and lighter
+$text: #444;
+$text-darker: darken($text, 15);
+$text-lighter: lighten($text, 15);

@@ -1,0 +1,20 @@
+<ion-header>
+    <ion-toolbar class="fondo">
+        <ion-buttons slot="start">
+            <ion-button (click)="regresar()">
+                <ion-icon slot="start" name="arrow-back" class="iconos"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+        <ion-title>{{producto.nombre | titlecase}}</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="fondo">
+    <div style="width: 100vw;">
+        <preload-image [ratio]="{w: 1, h: .75}" [src]="producto.url" class="radius10 shadow">
+        </preload-image>
+    </div>
+    <ion-item lines="none" class="margen">
+        <ion-label style="text-align: center;" class="ion-text-wrap descripcion-prod">{{producto.descripcion}}</ion-label>
+    </ion-item>
+</ion-content>

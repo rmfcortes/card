@@ -1,0 +1,20 @@
+<ion-content class="fondo">
+    <ng-container *ngIf="!error; else errorTemplate">
+        <!-- Contenido -->
+        <div *ngIf="perfil">
+            <div [ngSwitch]="perfil.plantilla">
+                <div *ngSwitchCase="'primera'">
+                    <app-primera [perfil]="perfil" (red)="goPage($event)" (call)="llamar()"></app-primera>
+                </div>
+                <div *ngSwitchCase="'segunda'">
+                    <app-segunda></app-segunda>
+                </div>
+            </div>
+        </div>
+    </ng-container>
+
+    <!-- Error template -->
+    <ng-template #errorTemplate>
+        <ion-label>{{error}}</ion-label>
+    </ng-template>
+</ion-content>

@@ -1,0 +1,44 @@
+<!-- Portada -->
+<preload-image [ratio]="{w: 1, h: 0.5}" [src]="perfil.portada"></preload-image>
+
+<!-- Foto perfil -->
+<div class="marco-foto">
+    <preload-image [ratio]="{w: 1, h: 1}" [src]="perfil.foto"></preload-image>
+</div>
+
+<!-- Nombre -->
+<h1 class="ion-text-wrap nombre" style="text-align: center;">{{perfil.nombre}}</h1>
+<!-- Puesto -->
+<p class="ion-text-wrap puesto" style="text-align: center;">{{perfil.puesto}}</p>
+
+<ion-grid fixed>
+    <ion-row>
+        <ion-col size="4">
+            <div class="iconos round">
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button>
+                        <ion-icon name="call"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div class="iconos round">
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button>
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div class="iconos round">
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button>
+                        <ion-icon name="mail"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>

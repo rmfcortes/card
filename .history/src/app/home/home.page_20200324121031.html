@@ -1,0 +1,30 @@
+<ion-header *ngIf="navegando">
+    <ion-toolbar>
+        <ion-title>Header</ion-title>
+    </ion-toolbar>
+</ion-header>
+<ion-content class="fondo">
+    <ng-container *ngIf="!error; else errorTemplate">
+        <!-- Contenido -->
+        <ng-container *ngIf="perfil; else loadTemplate">
+            <div [ngSwitch]="perfil.plantilla">
+                <div *ngSwitchCase="'primera'">
+                    <app-primera [perfil]="perfil" (red)="goPage($event)"></app-primera>
+                </div>
+                <div *ngSwitchCase="'segunda'">
+                    <app-segunda></app-segunda>
+                </div>
+            </div>
+        </ng-container>
+
+        <!-- Cargando template -->
+        <ng-template #loadTemplate>
+            <ion-label>Cargando</ion-label>
+        </ng-template>
+    </ng-container>
+
+    <!-- Error template -->
+    <ng-template #errorTemplate>
+        <ion-label>{{error}}</ion-label>
+    </ng-template>
+</ion-content>

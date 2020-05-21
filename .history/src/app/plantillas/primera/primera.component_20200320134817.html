@@ -1,0 +1,70 @@
+<!-- Portada -->
+<preload-image [ratio]="{w: 1, h: 0.5}" [src]="perfil.portada"></preload-image>
+
+<!-- Foto perfil -->
+<div class="marco-foto">
+    <preload-image [ratio]="{w: 1, h: 1}" [src]="perfil.foto"></preload-image>
+</div>
+
+<!-- Nombre -->
+<h1 class="ion-text-wrap nombre" style="text-align: center;">{{perfil.nombre}}</h1>
+<!-- Puesto -->
+<p class="ion-text-wrap puesto" style="text-align: center;">{{perfil.puesto}}</p>
+
+<!-- Botones FAB -->
+<ion-grid fixed style="margin-bottom: 4rem;">
+    <ion-row>
+        <ion-col size="4">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="call"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="4">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="mail"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<!-- Botones iconos -->
+
+<ion-grid>
+    <div style="text-align: center">
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-twitter"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-instagram"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" name="logo-pinterest"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" name="logo-youtube"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" name="logo-linkedin"></ion-icon>
+        </ion-button>
+    </div>
+</ion-grid>

@@ -1,0 +1,13 @@
+<ion-content class="fondo">
+    <ion-item lines="none">
+        <ion-icon slot="start" name="arrow-back" (click)="regresar()" class="botones"></ion-icon>
+        <ion-label class="botones">{{producto.nombre | titlecase}}</ion-label>
+    </ion-item>
+    <div style="width: 100vw;">
+        <preload-image [ratio]="{w: 1, h: .75}" [src]="producto.url" class="radius10 shadow">
+        </preload-image>
+    </div>
+    <ion-item lines="none" class="margen">
+        <ion-label style="text-align: center;" class="ion-text-wrap descripcion-prod">{{producto.descripcion}}</ion-label>
+    </ion-item>
+</ion-content>

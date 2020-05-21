@@ -1,0 +1,39 @@
+<ion-content class="fondo">
+    <ion-segment scrollable>
+        <ion-segment-button (click)="resetProds()" class="ion-text-wrap segment-button-todos">
+            Todos
+        </ion-segment-button>
+        <ion-segment-button (click)="resetProds(item.nombre)" *ngFor="let item of pasillos" class="ion-text-wrap segment-button" style="width: 100%">
+            {{item.nombre}}
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-card *ngFor="let item of pasillos; let i = index" class="main-card margen" [style.visibility]="item.productos && item.productos.length > 0 ? 'visible' : 'hidden'">
+        <ion-list-header style="--color: var(--ion-color-primary);">
+            <ion-label class="comfortaa">{{item.nombre | titlecase}}</ion-label>
+        </ion-list-header>
+        <ion-card *ngFor="let prod of item.productos; let y = index">
+            <ion-item style="--padding-start: 0" lines="none">
+                <ion-grid fixed>
+                    <ion-row>
+                        <ion-col size="8">
+                            <ion-item lines="none">
+                                <ion-label class="ion-text-wrap">
+                                    <h2>{{prod.nombre}}</h2>
+                                    <p style="font-size: 10pt; color:var(--ion-color-medium);">{{prod.descripcion}}</p>
+                                    <p style="font-size: 12pt; color:var(--ion-color-primary);">{{prod.precio | currency:'CAD':'symbol-narrow':'1.0-2'}}</p>
+                                </ion-label>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="4">
+                            <div class="border radius10 shadow" style="height: 100%;">
+                                <preload-image [ratio]="{w: 1, h: .75}" [src]="prod.url">
+                                </preload-image>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-card>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-tabs>
+    <ion-tab-bar slot="bottom" class="fondo">
+        <ion-tab-button tab="productos" *ngIf="perfil">
+            <ion-icon name="book"></ion-icon>
+            <ion-label color="secondary">Productos/Servicios</ion-label>
+        </ion-tab-button>
+
+        <ion-tab-button tab="home">
+            <!-- <ion-icon name="cog" color="secondary"></ion-icon>
+      <ion-label color="secondary">Settings</ion-label> -->
+        </ion-tab-button>
+
+        <ion-tab-button tab="mapa">
+            <ion-icon name="location" color="secondary"></ion-icon>
+            <ion-label color="secondary">Ubicación</ion-label>
+        </ion-tab-button>
+    </ion-tab-bar>
+
+</ion-tabs>
+<ion-fab vertical="bottom" horizontal="center" slot="fixed" *ngIf="perfil">
+    <ion-fab-button color="secondary" [routerLink]="'/'">
+        <ion-icon name="Home"></ion-icon>
+    </ion-fab-button>
+</ion-fab>

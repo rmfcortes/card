@@ -1,0 +1,22 @@
+<ion-content id="content">
+    <ng-container *ngIf="!error; else errorTemplate">
+        <ng-container *ngIf="perfil; else loadTemplate">
+            <div [style.background]="perfil.background || null" style="height:100%">
+                <div [ngSwitch]="perfil.plantilla">
+                    <div *ngSwitchCase="'primera'">
+                        <app-primera [perfil]="perfil"></app-primera>
+                    </div>
+                    <div *ngSwitchCase="'segunda'">
+                        <app-segunda></app-segunda>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+        <ng-template #loadTemplate>
+            <ion-label>Cargando</ion-label>
+        </ng-template>
+    </ng-container>
+    <ng-template #errorTemplate>
+        <ion-label>{{error}}</ion-label>
+    </ng-template>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-content class="fondo">
+    <ion-segment scrollable value="'todos'">
+        <ion-segment-button (click)="resetProds()" class="ion-text-wrap segment-button" value="'todos'">
+            Todos
+        </ion-segment-button>
+        <ion-segment-button (click)="resetProds(item.nombre)" [value]="item.nombre" *ngFor="let item of pasillos" class="ion-text-wrap segment-button" style="width: 100%">
+            {{item.nombre}}
+        </ion-segment-button>
+    </ion-segment>
+
+    <ion-card *ngFor="let item of pasillos; let i = index" class="main-card" [style.visibility]="item.productos && item.productos.length > 0 ? 'visible' : 'hidden'">
+        <ion-list-header class="encabezado">
+            <ion-label class="comfortaa">{{item.nombre | titlecase}}</ion-label>
+        </ion-list-header>
+        <ion-card *ngFor="let prod of item.productos; let y = index">
+            <ion-item style="--padding-start: 0" lines="none">
+                <ion-grid>
+                    <ion-row>
+                        <ion-col size="8">
+                            <ion-item lines="none">
+                                <ion-label class="ion-text-wrap">
+                                    <h2 class="nombre-prod">{{prod.nombre}}</h2>
+                                    <div class="descripProdColor">{{prod.descripcion}}</div>
+                                    <h2 class="precio-prod" *ngIf="prod.precio">{{prod.precio | currency:'CAD':'symbol-narrow':'1.0-2'}}</h2>
+                                </ion-label>
+                            </ion-item>
+                        </ion-col>
+                        <ion-col size="4">
+                            <div class="border radius10 shadow">
+                                <preload-image [ratio]="{w: 1, h: .75}" [src]="prod.url">
+                                </preload-image>
+                            </div>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+            </ion-item>
+        </ion-card>
+    </ion-card>
+
+    <ion-item style="margin-top: 3rem; text-align: center;">
+        <ion-label color="medium">No hay más resultados</ion-label>
+    </ion-item>
+</ion-content>

@@ -1,0 +1,22 @@
+<div [id]="item.nombre" *ngFor="let item of pasillos; let i = index; let first = first">
+    <ion-item lines="none">
+        <h6 class="ion-text-wrap comfortaa encabezado">{{item.nombre | titlecase}}</h6>
+    </ion-item>
+    <div class="card-container">
+        <div class="card" *ngFor="let prod of item.productos; let y = index">
+            <div class="border radius10 shadow">
+                <preload-image [ratio]="{w: 1, h: .75}" [src]="prod.url" class="radius10 shadow">
+                </preload-image>
+            </div>
+            <div class="product-name">
+                <h6 class="ion-text-wrap">{{prod.nombre}}</h6>
+            </div>
+            <span style="color: var(--ion-color-medium); font-size: 13pt">
+                        {{prod.precio | currency:'CAD':'symbol-narrow':'1.0-2'}}
+                    </span> <br>
+            <span style="color: var(--ion-color-medium); font-size: 12pt">
+                        {{prod.unidad}}
+                    </span><br>
+        </div>
+    </div>
+</div>

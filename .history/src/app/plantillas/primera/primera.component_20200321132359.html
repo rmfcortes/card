@@ -1,0 +1,88 @@
+<!-- Portada -->
+<preload-image [ratio]="{w: 1, h: 0.5}" [src]="perfil.portada"></preload-image>
+
+<!-- Foto perfil -->
+<div class="marco-foto">
+    <preload-image [ratio]="{w: 1, h: 1}" [src]="perfil.foto"></preload-image>
+</div>
+
+<!-- Nombre -->
+<ion-item lines="none" style="text-align: center;">
+    <ion-label>
+        <h1 class="ion-text-wrap nombre">{{perfil.nombre}}</h1>
+        <p class="ion-text-wrap puesto">{{perfil.puesto}}</p>
+    </ion-label>
+</ion-item>
+
+<!-- Contacto titulo-->
+<ion-item lines="none" style="text-align: center; margin: 0.75rem 0 0 0;">
+    <ion-label>
+        <h1 class="ion-text-wrap colorContacto">Contacto</h1>
+    </ion-label>
+</ion-item>
+<app-separador-estrella></app-separador-estrella>
+
+<!-- Contacto botones -->
+<ion-grid style="margin-bottom: 4rem;">
+    <ion-row>
+        <ion-col size="3">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="call"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="3">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="logo-whatsapp"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="3">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="mail"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+        <ion-col size="3">
+            <div>
+                <ion-fab vertical="top" horizontal="center" slot="fixed">
+                    <ion-fab-button class="botones">
+                        <ion-icon name="person-add"></ion-icon>
+                    </ion-fab-button>
+                </ion-fab>
+            </div>
+        </ion-col>
+    </ion-row>
+</ion-grid>
+
+<!-- Botones iconos -->
+<h2 class="ion-text-wrap colorContacto" style="text-align: center; margin-top: 1.75rem;">Sígueme</h2>
+<app-separador-estrella></app-separador-estrella>
+<ion-grid>
+    <div style="text-align: center">
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-facebook"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-twitter"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-instagram"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-youtube"></ion-icon>
+        </ion-button>
+        <ion-button class="iconos" (click)="onClick()" fill="clear" slot="start">
+            <ion-icon slot="icon-only" size="small" name="logo-linkedin"></ion-icon>
+        </ion-button>
+    </div>
+</ion-grid>

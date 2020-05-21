@@ -1,0 +1,18 @@
+.marco-foto {
+    position: absolute;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 50%;
+    overflow: hidden;
+    bottom: 10;
+    left: 35vw;
+}
+
+// Background color, shade, and tint
+$background: #3880ff;
+$background-shade: mix(#000, $background, 12%);
+$background-tint: mix(#fff, $background, 10%);
+// Text color, darker and lighter
+$text: #444;
+$text-darker: darken($text, 15);
+$text-lighter: lighten($text, 15);
